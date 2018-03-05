@@ -52,7 +52,6 @@ public class Camping_EB {
 
 
         for (int i = 0; i < N; i++) {
-
             xList.add(data[i][0]);
             yList.add(data[i][1]);
         }
@@ -136,15 +135,12 @@ public class Camping_EB {
                     //http://meansoup.blogspot.kr/2017/09/blog-post.html 참고
                     cnt = (S[startX][startY] + S[endX - 1][endY - 1]) - (S[endX - 1][startY] + S[startX][endY - 1]) ;
                 }
-
                 if (cnt == 0) {
 //                    System.out.println(data[i][0]+" , "+data[i][1]+" / "+data[j][0]+" , "+data[j][1]);
                     ans++;
                 }
             }
         }
-
-
     }
 
     public static void printNode(){
