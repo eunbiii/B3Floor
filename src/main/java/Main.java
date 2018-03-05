@@ -13,10 +13,11 @@ public class Main {
     public static int M;
     public static void main(String[] args)throws Exception {
         solve();
+
     }
 
     public static void solve()throws Exception {
-
+        System.out.println("HI");
     }
 }
 
