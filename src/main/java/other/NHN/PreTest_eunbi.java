@@ -1,4 +1,4 @@
-package NHN;
+package other.NHN;
 
 /**
  * Created by Rounting_eunbi on 2017-12-02.

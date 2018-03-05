@@ -1,8 +1,6 @@
 package algoSpot.PICNIC;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by eunbi on 2018-02-05.
@@ -25,101 +23,127 @@ import java.util.Scanner;
  * 출력
  * 각 테스트 케이스마다 한 줄에 모든 학생을 친구끼리만 짝지어줄 수 있는 방법의 수를 출력합니다.
  */
-public class PICNIC_EB_node {
+public class PICNIC_EB {
     public static StringBuilder sb = new StringBuilder();
-    public static Scanner sc = new Scanner(System.in);
-    public static int C;
+    public static java.io.BufferedReader br = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
     public static int count=0;
+    public static int C;
     public static int N;
     public static int M;
-    //public static int[][] freindsMap;
+    public static int[][] freindsMap;
 
     public static List<Node> nodeList = new ArrayList<Node>();
 
     public static void main(String[] args)  throws Exception{
-        C=sc.nextInt();
+        C=Integer.parseInt(br.readLine().trim());
         for(int i=0;i<C;i++) {
             solve();
         }
         System.out.println(sb.toString());
-        sc.close();
     }
 
     public static void solve() throws Exception {
-        N = sc.nextInt();
-        M = sc.nextInt();
+        String nmLine =br.readLine();
+        String[] sp = nmLine.split(" ");
 
-        /**
-         * 초기화
-         */
-        nodeList = new ArrayList<Node>();
+
+        N = Integer.parseInt(sp[0]);
+        M = Integer.parseInt(sp[1]);
+
+        String input = br.readLine();
+
         count = 0;
-        boolean[] checkList = new boolean[N+1];
+        boolean[] checkList = new boolean[N];
         for (int i = 0; i < N; i++) {
             checkList[i] = false;
         }
 
-        /**
-         * node 값 setting
-         */
-        for (int i = 0; i < M; i ++) {
-            nodeList.add(new Node(sc.nextInt(), sc.nextInt()));
+        initMap();
+
+        String[] spl = input.split(" ");
+        for (int i = 0; i < spl.length; i = i + 2) {
+            int a = Integer.parseInt(spl[i]);
+            int b = Integer.parseInt(spl[i + 1]);
+
+            freindsMap[a][b] = freindsMap[b][a] = 1;
+            nodeList.add(new Node(a, b));
         }
 
 
-        System.out.println(nodeList);
         for (Node node : nodeList) {
             boolean[] tempck = checkList.clone();
-
             tempck[node.a] = true;
             tempck[node.b] = true;
-            picnic(tempck,  1, node.toString());
+            picnic(tempck, "("+node.a+","+node.b+")", 1);
         }
 
-        int divid =combination();
+        int divid = (int)Math.pow(2,N/2);
+       // System.out.println(count +" / "+ combination());
         sb.append(count / divid).append("\n");
-//        System.out.println(count +"/"+ divid);
     }
 
-    public static void picnic(boolean[] checkList,  int num, String result) throws Exception{
+    public static void picnic(boolean[] checkList, String result, int num) {
 
         // 쌍을 모두 찾음
         if(num == N/2){
-            System.out.println(result);
+           // System.out.println(result);
             count++;
             return;
         }
-
-        //다음노드를 넣을지 말지 선정
         for(int i=0;num<N/2&&i<nodeList.size();i++){
             Node node = nodeList.get(i);
-            if(!checkList[node.a] &&!checkList[node.b]){
+            int a = node.a;
+            int b = node.b;
+
+            if(!checkList[a] &&!checkList[b]){
                 boolean[] tempck = checkList.clone();
 
-                tempck[node.a] = true;
-                tempck[node.b] = true;
 
-                picnic(tempck,  num+1 ,result+node);
+                tempck[a] = true;
+                tempck[b] = true;
+
+                picnic(tempck, result + " (" + a + "," + b + ")", num+1);
             }
 
         }
 
 
     }
-
-    /**
-     * N으로 나누는 값을 구한다.
-     * @return
-     */
     public static int combination(){
         int result=1;
         for(int i=1;i<=N/2;i++){
             result *= i;
         }
 
-        //    System.out.println(result);
+        System.out.println(result);
         return result;
     }
+
+
+    public static void initMap() {
+        freindsMap = new int[N][N];
+
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                freindsMap[i][j] = 0;
+
+            }
+        }
+    }
+
+    public static void print() {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                System.out.print(freindsMap[i][j] + " ");
+
+            }
+            System.out.println();
+        }
+    }
+
+
     public static class Node {
         int a;
         int b;
@@ -127,15 +151,6 @@ public class PICNIC_EB_node {
         public Node(int a, int b) {
             this.a = a;
             this.b = b;
-
-        }
-
-        @Override
-        public String toString() {
-            return "(" +
-                    a +
-                    ", " + b +
-                    ')';
         }
     }
 }

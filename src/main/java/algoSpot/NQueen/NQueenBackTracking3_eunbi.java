@@ -83,26 +83,7 @@ public class NQueenBackTracking3_eunbi {
         return sb.toString();
     }
 
-    public static void initBoard(int[] board, int n) {
-        for (int x = 0; x < n; x++) {
-            for (int y = 0; y < n; y++) {
-                board[x] = 0;
-            }
-        }
 
-    }
-
-    public static int[][] deepCopy(int[][] original, int n) {
-        if (original == null) {
-            return null;
-        }
-
-        int[][] result = new int[n][n];
-        for (int i = 0; i < original.length; i++) {
-            System.arraycopy(original[i], 0, result[i], 0, original[i].length);
-        }
-        return result;
-    }
 
 
 }

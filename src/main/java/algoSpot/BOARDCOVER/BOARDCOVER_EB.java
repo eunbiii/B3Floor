@@ -18,6 +18,9 @@ public class BOARDCOVER_EB {
     public static void main(String[] args)throws Exception {
         C=Integer.parseInt(br.readLine().trim());
 
+        /**
+         * 테스트케이스 루프
+         */
         for(int i=0;i<C;i++) {
             solve();
         }
@@ -27,6 +30,10 @@ public class BOARDCOVER_EB {
     public static void solve()throws Exception {
 //        H=8;
 //        W=10;
+
+        /**
+         * Setting var value
+         */
         String lines = br.readLine();
         String[] spl  = lines.split(" ");
         H=Integer.parseInt(spl[0]);
@@ -47,7 +54,9 @@ public class BOARDCOVER_EB {
         initBoard();
 
 
-
+        /**
+         * Map Data Setting
+         */
         for(int i=0;i<H;i++){
             String input = br.readLine();
             int j=1;
@@ -63,6 +72,9 @@ public class BOARDCOVER_EB {
     }
 
     public static void boardCover(){
+        /**
+         * Find first point '.'
+         */
         int x=1;
         int y=1;
         for(x=1;x<H+1;x++){
@@ -76,7 +88,7 @@ public class BOARDCOVER_EB {
             }
         }
 
-        //기저
+        //기저 => x,y 둘다 모두 채워짐
         if(x == H+1 && y == W+1){
             count++;
             return ;
@@ -112,14 +124,7 @@ public class BOARDCOVER_EB {
         }
 
     }
-    // 00 01 02
-    // 10 11 12
-    public static boolean checkBoard(int x, int y){
 
-
-        return false;
-
-    }
     public static String printBoard(){
         StringBuilder sb = new StringBuilder();
         sb.append("==========================\n");

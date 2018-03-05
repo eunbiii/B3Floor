@@ -21,6 +21,7 @@ public class delivery_EB {
     public static int[] distance;
     public static int[][] weight;
     public static boolean[] check;
+
     public static int[] firstNode;
 
 
@@ -97,8 +98,6 @@ public class delivery_EB {
                         firstNode[i] = firstNode[node];
                     }
                 }
-                //distance[i] = Math.min(distance[i], distance[node] + weight[node][i]);
-
             }
         }
         check[node] = true;
