@@ -1,6 +1,11 @@
 
 public class HackerLank3 {
-
+	/*
+	주어진 두 분수의 합을 구한 다음
+	약분한 상태의 분수 형식으로 출력하시오
+	예 : 1/2+3/9 = 5/6
+	*/
+	
 	public static void main(String[] args) {
 		
 		//abbreviation list
