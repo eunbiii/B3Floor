@@ -12,7 +12,7 @@ public class HackerLank3 {
 		String[] list = {
 				"1/2+3/4",
 				"5/7+3/8",
-				"11/11+12/13"
+				"11/11+12/12"
 		};
 		
 		String[] res = result(list);
@@ -46,8 +46,6 @@ public class HackerLank3 {
 	}
 	
 	public static int GCD(int a, int b) {
-		if(a == b) return a;
-		
 		int max = a > b ? a : b;
 		int min = a > b ? b : a;
 		int r;
