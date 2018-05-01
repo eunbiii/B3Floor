@@ -1,6 +1,11 @@
 
 public class HackerLank2 {
 
+		
+	/*24비트 RGB컬러가 2진수로 주어졌을 때
+	Red/Green/Blue/Black/White 중 거리가 가장 가까운 색을 구하시오
+	*/
+	
 	public static void main(String[] args) {
 		
 		//color list
