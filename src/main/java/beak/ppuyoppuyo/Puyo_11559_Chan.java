@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 
-public class Puyo_11559 {
+public class Puyo_11559_Chan {
 	
 	static char[][] graph = new char[12][6];
 	static boolean[][] visit = new boolean[12][6];

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class Tetromino_14500 {
+public class Tetromino_14500_Chan {
 
 	static int width, height;
 	
