@@ -24,6 +24,9 @@ public class gear_EB {
     }
 
     public static void solve() throws Exception {
+        /**
+         * 입력 및 초기화
+         */
         int i = 0;
         for (; i < 4; i++) {
             Gear gear = new Gear(br.readLine());
@@ -31,21 +34,22 @@ public class gear_EB {
         }
         K = Integer.parseInt(br.readLine());
 
-
-        printGear();
-
-
+        /**
+         * 해당 숫자에 맞는 기어 조작
+         */
         for (int j = 1; j <= K; j++) {
             // n 번호, M은 방향
             String[] line = br.readLine().split(" ");
             N = Integer.parseInt(line[0]);
             M = Integer.parseInt(line[1]);
             gearing(N-1, M);
-            printGear();
+          //  printGear();
 
         }
 
-
+        /**
+         * 북쪽의 극을 찾아 더함
+         */
         int sum=0;
         int k=0;
         for(int j=1; j<9; j*=2){
@@ -54,21 +58,19 @@ public class gear_EB {
             }
             k++;
         }
-
         System.out.println(sum);
     }
 
     public static void gearing(int gearNum, int clock) {
-        System.out.println("GearNum : "+gearNum +" / clock : "+clock);
+     //   System.out.println("GearNum : "+gearNum +" / clock : "+clock);
         Gear currentGear = gearList.get(gearNum);
 
-
-
+        //1. 현재 기어를 중심으로 오른쪽, 왼쪽의 rolling 함수를 호줄한다.
         rolling(gearNum + 1, 1, -1*clock);
         rolling(gearNum - 1, -1, -1*clock);
+
+        //2. 회전한 방향에 따라 현재기어의 upIndex 를 수정한다.
         currentGear.upIndex = (8 + currentGear.upIndex - clock) % 8;
-
-
     }
 
     //3,1 서로 맞닿은 톱니의 극이 다르다면, B는 A가 회전한 방향과 반대방향으로 회전하게 된다.
@@ -95,8 +97,6 @@ public class gear_EB {
                 currentGear.upIndex = (8 + currentGear.upIndex - clock) % 8;
             }
         }
-
-
         //   rolling(gearNum + direction, direction, clock);
 
     }
@@ -113,15 +113,8 @@ public class gear_EB {
             }
 
         }
-
-        public int getRightIndex() {
-            return (upIndex + 2) % 8;
-        }
-
-        public int getLeftIndex() {
-            return (upIndex + 6) % 8;
-        }
-
+        public int getRightIndex() { return (upIndex + 2) % 8; }
+        public int getLeftIndex() { return (upIndex + 6) % 8; }
         @Override
         public String toString() {
             return "Gear{" +

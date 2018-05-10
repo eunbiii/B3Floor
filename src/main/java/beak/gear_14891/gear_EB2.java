@@ -53,7 +53,7 @@ public class gear_EB2 {
             N = Integer.parseInt(line[0]);
             M = Integer.parseInt(line[1]);
             gearing(N, M);
-        //    printGear();
+            printGear();
 
         }
 
