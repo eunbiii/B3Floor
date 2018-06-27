@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Sort10825_Chan {
 	
 	public static void main(String[] args) {
-		Main m = new Main();
+		Sort10825_Chan m = new Sort10825_Chan();
 		m.init();
 	}
 	
