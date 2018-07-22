@@ -1,8 +1,11 @@
+package beak.VPS_9012;
+
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Chan_9012 {
+public class VPS_Chan {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);

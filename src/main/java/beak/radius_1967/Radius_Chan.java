@@ -1,3 +1,5 @@
+package beak.radius_1967;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

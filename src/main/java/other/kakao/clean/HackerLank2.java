@@ -1,3 +1,5 @@
+package other.kakao.clean;
+
 
 public class HackerLank2 {
 

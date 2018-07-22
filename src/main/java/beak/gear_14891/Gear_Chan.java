@@ -1,7 +1,10 @@
+package beak.gear_14891;
+
+
 import java.util.Scanner;
 
 
-public class Gear_14891 {
+public class Gear_Chan {
 	
 	static boolean[][] gear = new boolean[4][8];
 	

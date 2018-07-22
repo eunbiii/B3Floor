@@ -1,3 +1,5 @@
+package beak.sort_10825;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;

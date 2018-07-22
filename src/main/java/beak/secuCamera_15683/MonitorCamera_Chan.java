@@ -1,8 +1,10 @@
+package beak.secuCamera_15683;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class MonitorCamera {
+public class MonitorCamera_Chan {
 	
 	static int[][] dir = { { 0, -1 }, { 1, 0 }, { 0, 1 }, { -1, 0 } };
 	static int[][] graph;

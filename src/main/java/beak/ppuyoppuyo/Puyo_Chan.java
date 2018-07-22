@@ -1,3 +1,6 @@
+package beak.ppuyoppuyo;
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -6,7 +9,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 
-public class Puyo_11559_Chan {
+public class Puyo_Chan {
 	
 	static char[][] graph = new char[12][6];
 	static boolean[][] visit = new boolean[12][6];

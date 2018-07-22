@@ -1,4 +1,5 @@
-package study;
+package algoSpot.DiamondPath;
+
 
 import java.util.Scanner;
 

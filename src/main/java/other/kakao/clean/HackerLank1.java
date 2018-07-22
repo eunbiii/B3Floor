@@ -1,3 +1,5 @@
+package other.kakao.clean;
+
 import java.util.HashMap;
 
 public class HackerLank1 {

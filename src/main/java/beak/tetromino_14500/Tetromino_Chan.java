@@ -1,7 +1,10 @@
+package beak.tetromino_14500;
+
+
 import java.util.Scanner;
 
 
-public class Tetromino_14500_Chan {
+public class Tetromino_Chan {
 
 	static int width, height;
 	

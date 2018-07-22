@@ -1,10 +1,13 @@
+package beak.game2048;
+
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
 
-public class Game2048 {
+public class Game2048_Chan {
 
 	static int max = 0;
 	static int n;
